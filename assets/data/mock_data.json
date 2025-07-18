@@ -1,0 +1,55 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "name": "Nguyễn Văn A",
+      "email": "nguyenvana@example.com",
+      "avatar": "https://via.placeholder.com/150",
+      "created_at": "2024-01-01T00:00:00Z",
+      "updated_at": "2024-01-01T00:00:00Z"
+    },
+    {
+      "id": "2",
+      "name": "Trần Thị B",
+      "email": "tranthib@example.com",
+      "avatar": "https://via.placeholder.com/150",
+      "created_at": "2024-01-02T00:00:00Z",
+      "updated_at": "2024-01-02T00:00:00Z"
+    },
+    {
+      "id": "3",
+      "name": "Lê Văn C",
+      "email": "levanc@example.com",
+      "avatar": "https://via.placeholder.com/150",
+      "created_at": "2024-01-03T00:00:00Z",
+      "updated_at": "2024-01-03T00:00:00Z"
+    }
+  ],
+  "categories": [
+    {
+      "id": "1",
+      "name": "Công nghệ",
+      "description": "Các bài viết về công nghệ"
+    },
+    {
+      "id": "2",
+      "name": "Giáo dục",
+      "description": "Các bài viết về giáo dục"
+    },
+    {
+      "id": "3",
+      "name": "Thể thao",
+      "description": "Các bài viết về thể thao"
+    }
+  ],
+  "settings": {
+    "app_version": "1.0.0",
+    "api_version": "v1",
+    "maintenance_mode": false,
+    "features": {
+      "dark_mode": true,
+      "notifications": true,
+      "offline_mode": true
+    }
+  }
+}
