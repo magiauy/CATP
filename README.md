@@ -74,8 +74,8 @@ lib/
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/your-username/flutter-age-selection-app.git
-cd flutter-age-selection-app
+git clone https://github.com/magiauy/CATP.git
+cd CATP
 ```
 
 2. Install dependencies:
