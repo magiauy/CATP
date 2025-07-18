@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
-import '../../constants/colors.dart';
-import '../../constants/string.dart';
+import '../../constants/constants.dart';
 import '../../widgets/custom_alert.dart';
 
 class AlertDemoScreen extends StatelessWidget {
-  const AlertDemoScreen({Key? key}) : super(key: key);
+  const AlertDemoScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -98,6 +97,8 @@ class AlertDemoScreen extends StatelessWidget {
                   confirmText: 'Xóa',
                   cancelText: 'Hủy',
                 );
+
+                if (!context.mounted) return;
 
                 if (result == true) {
                   ToastHelper.showSuccess(context, 'Đã xóa thành công!');

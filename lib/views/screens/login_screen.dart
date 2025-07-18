@@ -4,7 +4,7 @@ import '../../controllers/login_controller.dart';
 import '../../constants/constants.dart';
 
 class LoginScreen extends StatefulWidget {
-  const LoginScreen({Key? key}) : super(key: key);
+  const LoginScreen({super.key});
 
   @override
   State<LoginScreen> createState() => _LoginScreenState();
@@ -66,7 +66,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         borderRadius: BorderRadius.circular(16),
                         boxShadow: [
                           BoxShadow(
-                            color: AppColors.black.withOpacity(0.1),
+                            color: AppColors.black.withValues(alpha: 0.1),
                             blurRadius: 10,
                             offset: const Offset(0, 5),
                           ),
@@ -236,6 +236,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                             await controller.login();
                                             if (mounted &&
                                                 !controller.isLoading) {
+                                              if (!context.mounted) return;
                                               Navigator.pushReplacementNamed(
                                                 context,
                                                 '/',

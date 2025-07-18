@@ -5,7 +5,7 @@ import '../widgets/sos_card.dart';
 import '../constants/constants.dart';
 
 class SOSScreen extends StatefulWidget {
-  const SOSScreen({Key? key}) : super(key: key);
+  const SOSScreen({super.key});
 
   @override
   State<SOSScreen> createState() => _SOSScreenState();
@@ -124,7 +124,7 @@ class _SOSScreenState extends State<SOSScreen>
                     shape: BoxShape.circle,
                     boxShadow: [
                       BoxShadow(
-                        color: AppColors.black.withOpacity(0.3),
+                        color: AppColors.black.withValues(alpha: 0.3),
                         blurRadius: 20,
                         offset: const Offset(0, 10),
                       ),

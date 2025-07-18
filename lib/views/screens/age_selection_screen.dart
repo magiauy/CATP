@@ -4,7 +4,7 @@ import '../../controllers/age_selection_controller.dart';
 import '../../constants/constants.dart';
 
 class AgeSelectionScreen extends StatefulWidget {
-  const AgeSelectionScreen({Key? key}) : super(key: key);
+  const AgeSelectionScreen({super.key});
 
   @override
   State<AgeSelectionScreen> createState() => _AgeSelectionScreenState();
@@ -46,7 +46,7 @@ class _AgeSelectionScreenState extends State<AgeSelectionScreen> {
                             shape: BoxShape.circle,
                             boxShadow: [
                               BoxShadow(
-                                color: AppColors.error.withOpacity(0.3),
+                                color: AppColors.error.withValues(alpha: 0.3),
                                 blurRadius: 8,
                                 offset: const Offset(0, 4),
                               ),
@@ -89,6 +89,7 @@ class _AgeSelectionScreenState extends State<AgeSelectionScreen> {
                                 Future.delayed(
                                   const Duration(milliseconds: 300),
                                   () {
+                                    if (!context.mounted) return;
                                     controller.navigateToNext(context);
                                   },
                                 );
@@ -110,8 +111,9 @@ class _AgeSelectionScreenState extends State<AgeSelectionScreen> {
                                         : 1.0,
                                   ),
                                 decoration: BoxDecoration(
-                                  color: AppColors.white.withOpacity(
-                                    controller.selectedAgeGroup == '12-18'
+                                  color: AppColors.white.withValues(
+                                    alpha:
+                                        controller.selectedAgeGroup == '12-18'
                                         ? 1.0
                                         : controller.selectedAgeGroup == '18-30'
                                         ? 0.6
@@ -120,8 +122,10 @@ class _AgeSelectionScreenState extends State<AgeSelectionScreen> {
                                   borderRadius: BorderRadius.circular(16),
                                   boxShadow: [
                                     BoxShadow(
-                                      color: AppColors.black.withOpacity(
-                                        controller.selectedAgeGroup == '12-18'
+                                      color: AppColors.black.withValues(
+                                        alpha:
+                                            controller.selectedAgeGroup ==
+                                                '12-18'
                                             ? 0.25
                                             : controller.selectedAgeGroup ==
                                                   '18-30'
@@ -157,8 +161,10 @@ class _AgeSelectionScreenState extends State<AgeSelectionScreen> {
                                       width: 60,
                                       height: 60,
                                       decoration: BoxDecoration(
-                                        color: AppColors.primary.withOpacity(
-                                          controller.selectedAgeGroup == '12-18'
+                                        color: AppColors.primary.withValues(
+                                          alpha:
+                                              controller.selectedAgeGroup ==
+                                                  '12-18'
                                               ? 0.15
                                               : controller.selectedAgeGroup ==
                                                     '18-30'
@@ -210,17 +216,17 @@ class _AgeSelectionScreenState extends State<AgeSelectionScreen> {
                                             milliseconds: 200,
                                           ),
                                           style: TextStyle(
-                                            color: AppColors.textPrimary
-                                                .withOpacity(
+                                            color: AppColors.textPrimary.withValues(
+                                              alpha:
                                                   controller.selectedAgeGroup ==
-                                                          '12-18'
-                                                      ? 1.0
-                                                      : controller
-                                                                .selectedAgeGroup ==
-                                                            '18-30'
-                                                      ? 0.6
-                                                      : 1.0,
-                                                ),
+                                                      '12-18'
+                                                  ? 1.0
+                                                  : controller
+                                                            .selectedAgeGroup ==
+                                                        '18-30'
+                                                  ? 0.6
+                                                  : 1.0,
+                                            ),
                                             fontSize: 18,
                                             fontWeight: FontWeight.w600,
                                           ),
@@ -232,17 +238,17 @@ class _AgeSelectionScreenState extends State<AgeSelectionScreen> {
                                             milliseconds: 200,
                                           ),
                                           style: TextStyle(
-                                            color: AppColors.textSecondary
-                                                .withOpacity(
+                                            color: AppColors.textSecondary.withValues(
+                                              alpha:
                                                   controller.selectedAgeGroup ==
-                                                          '12-18'
-                                                      ? 1.0
-                                                      : controller
-                                                                .selectedAgeGroup ==
-                                                            '18-30'
-                                                      ? 0.6
-                                                      : 1.0,
-                                                ),
+                                                      '12-18'
+                                                  ? 1.0
+                                                  : controller
+                                                            .selectedAgeGroup ==
+                                                        '18-30'
+                                                  ? 0.6
+                                                  : 1.0,
+                                            ),
                                             fontSize: 14,
                                           ),
                                           child: Text(
@@ -265,6 +271,7 @@ class _AgeSelectionScreenState extends State<AgeSelectionScreen> {
                                 Future.delayed(
                                   const Duration(milliseconds: 300),
                                   () {
+                                    if (!context.mounted) return;
                                     controller.navigateToNext(context);
                                   },
                                 );
@@ -285,8 +292,9 @@ class _AgeSelectionScreenState extends State<AgeSelectionScreen> {
                                         : 1.0,
                                   ),
                                 decoration: BoxDecoration(
-                                  color: AppColors.white.withOpacity(
-                                    controller.selectedAgeGroup == '18-30'
+                                  color: AppColors.white.withValues(
+                                    alpha:
+                                        controller.selectedAgeGroup == '18-30'
                                         ? 1.0
                                         : controller.selectedAgeGroup == '12-18'
                                         ? 0.6
@@ -295,8 +303,10 @@ class _AgeSelectionScreenState extends State<AgeSelectionScreen> {
                                   borderRadius: BorderRadius.circular(16),
                                   boxShadow: [
                                     BoxShadow(
-                                      color: AppColors.black.withOpacity(
-                                        controller.selectedAgeGroup == '18-30'
+                                      color: AppColors.black.withValues(
+                                        alpha:
+                                            controller.selectedAgeGroup ==
+                                                '18-30'
                                             ? 0.25
                                             : controller.selectedAgeGroup ==
                                                   '12-18'
@@ -332,8 +342,10 @@ class _AgeSelectionScreenState extends State<AgeSelectionScreen> {
                                       width: 60,
                                       height: 60,
                                       decoration: BoxDecoration(
-                                        color: AppColors.secondary.withOpacity(
-                                          controller.selectedAgeGroup == '18-30'
+                                        color: AppColors.secondary.withValues(
+                                          alpha:
+                                              controller.selectedAgeGroup ==
+                                                  '18-30'
                                               ? 0.15
                                               : controller.selectedAgeGroup ==
                                                     '12-18'
@@ -385,17 +397,17 @@ class _AgeSelectionScreenState extends State<AgeSelectionScreen> {
                                             milliseconds: 200,
                                           ),
                                           style: TextStyle(
-                                            color: AppColors.textPrimary
-                                                .withOpacity(
+                                            color: AppColors.textPrimary.withValues(
+                                              alpha:
                                                   controller.selectedAgeGroup ==
-                                                          '18-30'
-                                                      ? 1.0
-                                                      : controller
-                                                                .selectedAgeGroup ==
-                                                            '12-18'
-                                                      ? 0.6
-                                                      : 1.0,
-                                                ),
+                                                      '18-30'
+                                                  ? 1.0
+                                                  : controller
+                                                            .selectedAgeGroup ==
+                                                        '12-18'
+                                                  ? 0.6
+                                                  : 1.0,
+                                            ),
                                             fontSize: 18,
                                             fontWeight: FontWeight.w600,
                                           ),
@@ -407,17 +419,17 @@ class _AgeSelectionScreenState extends State<AgeSelectionScreen> {
                                             milliseconds: 200,
                                           ),
                                           style: TextStyle(
-                                            color: AppColors.textSecondary
-                                                .withOpacity(
+                                            color: AppColors.textSecondary.withValues(
+                                              alpha:
                                                   controller.selectedAgeGroup ==
-                                                          '18-30'
-                                                      ? 1.0
-                                                      : controller
-                                                                .selectedAgeGroup ==
-                                                            '12-18'
-                                                      ? 0.6
-                                                      : 1.0,
-                                                ),
+                                                      '18-30'
+                                                  ? 1.0
+                                                  : controller
+                                                            .selectedAgeGroup ==
+                                                        '12-18'
+                                                  ? 0.6
+                                                  : 1.0,
+                                            ),
                                             fontSize: 14,
                                           ),
                                           child: Text(

@@ -9,13 +9,13 @@ class SosCard extends StatelessWidget {
   final bool isEmergency;
 
   const SosCard({
-    Key? key,
+    super.key,
     required this.title,
     this.subtitle,
     required this.iconPath,
     this.onTap,
     this.isEmergency = false,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -33,7 +33,7 @@ class SosCard extends StatelessWidget {
               borderRadius: BorderRadius.circular(16),
               boxShadow: [
                 BoxShadow(
-                  color: AppColors.black.withOpacity(0.1),
+                  color: AppColors.black.withValues(alpha: 0.1),
                   blurRadius: 10,
                   offset: const Offset(0, 4),
                 ),
@@ -47,8 +47,8 @@ class SosCard extends StatelessWidget {
                   height: 56,
                   decoration: BoxDecoration(
                     color: isEmergency
-                        ? AppColors.error.withOpacity(0.1)
-                        : AppColors.primary.withOpacity(0.1),
+                        ? AppColors.error.withValues(alpha: 0.1)
+                        : AppColors.primary.withValues(alpha: 0.1),
                     borderRadius: BorderRadius.circular(12),
                   ),
                   child: ClipRRect(
@@ -122,11 +122,11 @@ class EmergencyNumberCard extends StatelessWidget {
   final VoidCallback? onTap;
 
   const EmergencyNumberCard({
-    Key? key,
+    super.key,
     required this.number,
     required this.title,
     this.onTap,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -144,7 +144,7 @@ class EmergencyNumberCard extends StatelessWidget {
               borderRadius: BorderRadius.circular(16),
               boxShadow: [
                 BoxShadow(
-                  color: AppColors.black.withOpacity(0.1),
+                  color: AppColors.black.withValues(alpha: 0.1),
                   blurRadius: 10,
                   offset: const Offset(0, 4),
                 ),

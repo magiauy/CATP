@@ -14,7 +14,7 @@ class CustomAlert extends StatelessWidget {
   final VoidCallback? onCancel;
 
   const CustomAlert({
-    Key? key,
+    super.key,
     required this.type,
     required this.title,
     required this.message,
@@ -22,7 +22,7 @@ class CustomAlert extends StatelessWidget {
     this.cancelText,
     this.onConfirm,
     this.onCancel,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -34,7 +34,7 @@ class CustomAlert extends StatelessWidget {
           Container(
             padding: const EdgeInsets.all(8),
             decoration: BoxDecoration(
-              color: _getBackgroundColor().withOpacity(0.1),
+              color: _getBackgroundColor().withValues(alpha: 0.1),
               borderRadius: BorderRadius.circular(8),
             ),
             child: Icon(_getIcon(), color: _getBackgroundColor(), size: 24),
@@ -232,11 +232,11 @@ class CustomToast extends StatelessWidget {
   final Duration duration;
 
   const CustomToast({
-    Key? key,
+    super.key,
     required this.type,
     required this.message,
     this.duration = const Duration(seconds: 3),
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -250,13 +250,13 @@ class CustomToast extends StatelessWidget {
           borderRadius: BorderRadius.circular(12),
           boxShadow: [
             BoxShadow(
-              color: AppColors.black.withOpacity(0.1),
+              color: AppColors.black.withValues(alpha: 0.1),
               blurRadius: 10,
               offset: const Offset(0, 5),
             ),
           ],
           border: Border.all(
-            color: _getBackgroundColor().withOpacity(0.2),
+            color: _getBackgroundColor().withValues(alpha: 0.2),
             width: 1,
           ),
         ),
@@ -265,7 +265,7 @@ class CustomToast extends StatelessWidget {
             Container(
               padding: const EdgeInsets.all(6),
               decoration: BoxDecoration(
-                color: _getBackgroundColor().withOpacity(0.1),
+                color: _getBackgroundColor().withValues(alpha: 0.1),
                 borderRadius: BorderRadius.circular(6),
               ),
               child: Icon(_getIcon(), color: _getBackgroundColor(), size: 20),

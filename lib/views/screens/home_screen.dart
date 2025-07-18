@@ -7,9 +7,10 @@ import '../widgets/custom_button.dart';
 import '../../data/local_data_provider.dart';
 import '../../models/user.dart';
 import '../../utils/date_helper.dart';
+import '../../utils/logger.dart';
 
 class HomeScreen extends StatefulWidget {
-  const HomeScreen({Key? key}) : super(key: key);
+  const HomeScreen({super.key});
 
   @override
   State<HomeScreen> createState() => _HomeScreenState();
@@ -35,9 +36,7 @@ class _HomeScreenState extends State<HomeScreen> {
         settings = settingsData;
       });
     } catch (e) {
-      ScaffoldMessenger.of(
-        context,
-      ).showSnackBar(SnackBar(content: Text('Lỗi tải dữ liệu: $e')));
+      AppLogger.error('Error loading data: $e');
     }
   }
 

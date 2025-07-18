@@ -4,7 +4,7 @@ import '../../controllers/register_controller.dart';
 import '../../constants/constants.dart';
 
 class RegisterScreen extends StatefulWidget {
-  const RegisterScreen({Key? key}) : super(key: key);
+  const RegisterScreen({super.key});
 
   @override
   State<RegisterScreen> createState() => _RegisterScreenState();
@@ -72,7 +72,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                         borderRadius: BorderRadius.circular(16),
                         boxShadow: [
                           BoxShadow(
-                            color: AppColors.black.withOpacity(0.1),
+                            color: AppColors.black.withValues(alpha: 0.1),
                             blurRadius: 10,
                             offset: const Offset(0, 5),
                           ),
@@ -331,6 +331,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                             await controller.register();
                                             if (mounted &&
                                                 !controller.isLoading) {
+                                              if (!context.mounted) return;
                                               controller.navigateToLogin(
                                                 context,
                                               );

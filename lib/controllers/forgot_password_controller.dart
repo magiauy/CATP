@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../utils/utils.dart';
 
 class ForgotPasswordController extends ChangeNotifier {
   String _email = '';
@@ -25,9 +26,9 @@ class ForgotPasswordController extends ChangeNotifier {
       // Here you would typically make an API call to send reset link
       // await AuthService.sendPasswordResetEmail(_email);
 
-      print('Password reset link sent to: $_email');
+      AppLogger.info('Password reset link sent to: $_email');
     } catch (e) {
-      print('Error sending password reset link: $e');
+      AppLogger.error('Error sending password reset link: $e');
       // Handle error
     } finally {
       _isLoading = false;

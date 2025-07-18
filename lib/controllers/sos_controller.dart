@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:testflutter/utils/logger.dart';
 
 class SOSController with ChangeNotifier {
   bool _isLoading = false;
@@ -37,7 +38,7 @@ class SOSController with ChangeNotifier {
 
       // In a real app, this would open the phone dialer
       // For now, we'll just show a message
-      print('Emergency call to: $phoneNumber');
+      AppLogger.info('Emergency call to: $phoneNumber');
     } catch (e) {
       setError('Có lỗi xảy ra khi thực hiện cuộc gọi: $e');
     } finally {
@@ -55,7 +56,7 @@ class SOSController with ChangeNotifier {
       await Future.delayed(const Duration(seconds: 1));
 
       // In a real app, this would open the SMS app
-      print('SMS to: $phoneNumber, Message: $message');
+      AppLogger.info('SMS to: $phoneNumber, Message: $message');
     } catch (e) {
       setError('Có lỗi xảy ra khi gửi tin nhắn: $e');
     } finally {
@@ -141,11 +142,5 @@ class SOSController with ChangeNotifier {
         'color': Colors.orange,
       },
     ];
-  }
-
-  // Dispose method
-  @override
-  void dispose() {
-    super.dispose();
   }
 }

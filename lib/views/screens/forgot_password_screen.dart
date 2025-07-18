@@ -5,7 +5,7 @@ import '../../constants/constants.dart';
 import '../../widgets/custom_alert.dart';
 
 class ForgotPasswordScreen extends StatefulWidget {
-  const ForgotPasswordScreen({Key? key}) : super(key: key);
+  const ForgotPasswordScreen({super.key});
 
   @override
   State<ForgotPasswordScreen> createState() => _ForgotPasswordScreenState();
@@ -67,7 +67,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                             borderRadius: BorderRadius.circular(16),
                             boxShadow: [
                               BoxShadow(
-                                color: AppColors.black.withOpacity(0.1),
+                                color: AppColors.black.withValues(alpha: 0.1),
                                 blurRadius: 10,
                                 offset: const Offset(0, 5),
                               ),
@@ -168,6 +168,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                                                     .sendResetLink();
                                                 if (mounted &&
                                                     !controller.isLoading) {
+                                                  if (!context.mounted) return;
                                                   // Show success message using custom alert
                                                   AlertHelper.showSuccess(
                                                     context,
