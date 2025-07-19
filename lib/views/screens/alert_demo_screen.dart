@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../constants/constants.dart';
-import '../../widgets/custom_alert.dart';
+import '../widgets/custom_alert.dart';
 
 class AlertDemoScreen extends StatelessWidget {
   const AlertDemoScreen({super.key});

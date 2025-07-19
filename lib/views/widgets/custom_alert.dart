@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import '../constants/colors.dart';
-import '../constants/string.dart';
+import '../../constants/colors.dart';
+import '../../constants/string.dart';
 
 enum AlertType { success, error, warning, confirm }
 

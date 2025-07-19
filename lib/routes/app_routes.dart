@@ -5,7 +5,7 @@ import '../views/screens/register_screen.dart';
 import '../views/screens/forgot_password_screen.dart';
 import '../views/screens/alert_demo_screen.dart';
 import '../views/screens/age_selection_screen.dart';
-import '../screens/sos_screen.dart';
+import '../views/screens/sos_screen.dart';
 
 class AppRoutes {
   static const String home = '/';

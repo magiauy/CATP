@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../constants/constants.dart';
+import '../../constants/constants.dart';
 
 class SosCard extends StatelessWidget {
   final String title;

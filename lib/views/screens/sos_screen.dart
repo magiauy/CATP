@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import '../controllers/sos_controller.dart';
+import '../../controllers/sos_controller.dart';
 import '../widgets/sos_card.dart';
-import '../constants/constants.dart';
+import '../../constants/constants.dart';
 
 class SOSScreen extends StatefulWidget {
   const SOSScreen({super.key});
@@ -130,20 +130,31 @@ class _SOSScreenState extends State<SOSScreen>
                       ),
                     ],
                   ),
-                  child: Center(
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        const SizedBox(height: 4),
-                        Text(
-                          AppStrings.sosTitle,
-                          style: const TextStyle(
-                            fontSize: 49,
-                            fontWeight: FontWeight.w700,
-                            color: AppColors.white,
-                          ),
+                  child: Material(
+                    color: Colors.transparent,
+                    shape: const CircleBorder(),
+                    clipBehavior: Clip.antiAlias,
+                    child: InkWell(
+                      onTap: () => sosController.makeEmergencyCall('113'),
+                      splashColor: Colors.white.withValues(alpha: 0.2),
+                      highlightColor: Colors.white.withValues(alpha: 0.1),
+                      child: Center(
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            const SizedBox(height: 4),
+                            Text(
+                              AppStrings.sosTitle,
+                              style: const TextStyle(
+                                fontSize: 49,
+                                fontWeight: FontWeight.w700,
+                                color: AppColors.white,
+                                letterSpacing: 1.2,
+                              ),
+                            ),
+                          ],
                         ),
-                      ],
+                      ),
                     ),
                   ),
                 ),
@@ -165,6 +176,7 @@ class _SOSScreenState extends State<SOSScreen>
           topRight: Radius.circular(30),
         ),
       ),
+      clipBehavior: Clip.antiAlias,
       child: Padding(
         padding: const EdgeInsets.all(24),
         child: Column(
@@ -173,6 +185,7 @@ class _SOSScreenState extends State<SOSScreen>
             // Services List
             Expanded(
               child: ListView(
+                physics: const BouncingScrollPhysics(),
                 children: [
                   // Emergency Number Card
                   EmergencyNumberCard(
